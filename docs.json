@@ -11,30 +11,68 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Products",
+        "tab": "Welcome",
+        "icon": "house",
         "groups": [
           {
-            "group": "STARS Keyboard",
-            "icon": "keyboard",
+            "group": "Get Started",
+            "icon": "star-shooting",
             "pages": [
-              "index",
-              "quickstart",
-              "keymap",
-              "troubleshooting"
+              "index"
             ]
           },
           {
             "group": "Feedback & Support",
             "icon": "lightbulb",
             "pages": [
+              "troubleshooting",
               "feedback",
               "support"
             ]
           }
-        ]      
+        ]
+      },
+      {
+        "tab": "STARS Keyboard",
+        "icon": "radar",
+        "groups": [
+          {
+            "group": "STARS Keyboard",
+            "icon": "radar",
+            "pages": [
+              "stars/quickstart",
+              "stars/keymap"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "ERAM Keyboard",
+        "icon": "keyboard",
+        "groups": [
+          {
+            "group": "ERAM Keyboard",
+            "icon": "keyboard",
+            "pages": [
+              "eram/quickstart",
+              "eram/keymap",
+              "eram/ksd"
+            ]
+          }
+        ]
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/quickstart",
+      "destination": "/stars/quickstart"
+    },
+    {
+      "source": "/keymap",
+      "destination": "/stars/keymap"
+    }
+  ],
   "logo": {
     "light": "/logo/light.png",
     "dark": "/logo/dark.png",

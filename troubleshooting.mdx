@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: "Diagnose issues relating to the STARS Keyboard."
+description: "Diagnose issues with any Virtual Controller Supply keyboard."
 icon: gear-complex-code
 ---
 
@@ -8,29 +8,29 @@ icon: gear-complex-code
   **Please complete the steps on this page before contacting us for support,** as it will greatly assist in solving the issue.
 </Note>
 
-This guide is designed to help you quickly identify the source of an issue with the STARS Keyboard.
+This guide helps you quickly identify the source of an issue with your keyboard. It applies to every Virtual Controller Supply keyboard, including the STARS Keyboard, ERAM Keyboard, and KSD.
 
 In most cases, problems are caused by simple setup or software issues rather than hardware. The steps below start with quick checks before moving into more detailed testing.
 
 Follow each step in order. This process will help determine whether the issue is related to:
-- The STARS Keyboard itself
+- The keyboard itself
 - Your computer
 - CRC
 - Something else
 
-## Step 1: Quick Checks
+## Step 1: Quick checks
 
 These suggestions often resolve common issues and only take a minute to try. Check if they do anything to improve or resolve the problem.
 
 ### Test
 
-1. Verify CRC is in focus when pressing keys on the STARS Keyboard. CRC does not recognize key presses if a different application is in focus. 
-2. Run CRC in `debug` mode and check the logs for messages related to the STARS Keyboard. 
-3. If the keyboard is plugged into a USB hub, try plugging it directly into the computer instead.
-4. Disable software that could potentially cause interference, such as keybinding utilities. 
-5. Unplug and then replug in the STARS Keyboard.
+1. Verify CRC is in focus, with the display that matches your keyboard active, when pressing keys. For example, the STARS Keyboard needs an active STARS display. CRC does not recognize key presses if a different application is in focus.
+2. Run CRC in `debug` mode and check the logs for messages related to your keyboard.
+3. If the keyboard is plugged into a USB hub, try plugging it directly into the computer instead. If your KSD is connected through an ERAM Keyboard, try plugging it directly into the computer as well.
+4. Disable software that could potentially cause interference, such as keybinding utilities.
+5. Unplug and then replug in the keyboard.
 6. Restart CRC completely.
-7. Restart your computer and then relaunch CRC. 
+7. Restart your computer and then relaunch CRC.
 
 ### Result
 
@@ -39,14 +39,23 @@ If the issue is resolved, no further action is needed.
 </Check>
 
 <Danger>
-If the issue persists, continue to [Step 2](#step-2-test-standard-keyboard) for more detailed testing.
+If the issue persists, continue to [Step 2](#step-2-test-standard-keyboard-keys) for more detailed testing.
 </Danger>
 
-## Step 2: Test Standard Keyboard
+## Step 2: Test standard keyboard keys
 
-As discussed in the [Keymap & Shortcuts](/keymap) guide, the keyboard is a composite USB device with some keys that act like a standard keyboard, and others that act like a joystick-style input. This step confirms that your computer recognizes the standard keyboard keys properly.
+The STARS Keyboard and ERAM Keyboard are composite USB devices. Some keys act like a standard keyboard, and others act like a joystick-style input. Your product's key map shows which keys are which:
 
-### Open a Text Editor
+- [STARS Keyboard key map](/stars/keymap)
+- [ERAM Keyboard key map](/eram/keymap)
+
+This step confirms that your computer recognizes the standard keyboard keys properly.
+
+<Note>
+  **Using a KSD?** The [KSD](/eram/ksd) only has joystick-style keys, so skip to [Step 3](#step-3-test-joystick-style-keys).
+</Note>
+
+### Open a text editor
 
 <AccordionGroup>
   <Accordion title='Windows' icon="windows">
@@ -68,24 +77,24 @@ As discussed in the [Keymap & Shortcuts](/keymap) guide, the keyboard is a compo
 
 ### Test
 
-1. Press several of the white `A-Z` keys on the STARS Keyboard.
+1. Press several of the standard keyboard keys, such as the letter or number keys.
 2. Confirm that the characters you pressed appear in the text editor.
 
 ### Result
 
 <Check>
-  If the characters appear correctly, continue to [Step 3](#step-3-test-gamepad-keys).
+  If the characters appear correctly, continue to [Step 3](#step-3-test-joystick-style-keys).
 </Check>
 
 <Danger>
-  If no input appears, skip to [Debugging: Keyboard Not Detected](#debugging-keyboard-not-detected).
+  If no input appears, skip to [Debugging: Keyboard not detected](#debugging-keyboard-not-detected).
 </Danger>
 
-## Step 3: Test Gamepad Keys
+## Step 3: Test joystick-style keys
 
-This step confirms that your computer recognizes the joystick or gamepad-style keys properly.
+This step confirms that your computer recognizes the joystick or gamepad-style keys properly. For example, the top row of the STARS Keyboard, the top two rows of the ERAM Keyboard, and every key on the KSD are joystick-style keys.
 
-### Open a Button Tester
+### Open a button tester
 
 <AccordionGroup>
   <Accordion title='Windows' icon="windows">
@@ -95,60 +104,61 @@ This step confirms that your computer recognizes the joystick or gamepad-style k
 
     1. Ensure the device is plugged in
     2. Navigate to the page linked above
-    3. Press any of the keys in the top row of the STARS Keyboard to detect the device 
+    3. Press any joystick-style key on your keyboard to detect the device
   </Accordion>
 
   <Accordion title="macOS" icon="apple">
-    Use an online tool like [Gamepad Tester](https://hardwaretester.com/gamepad), or install a third-party application. 
+    Use an online tool like [Gamepad Tester](https://hardwaretester.com/gamepad), or install a third-party application.
 
     To use the online tool:
 
     1. Ensure the device is plugged in
     2. Navigate to the page linked above
-    3. Press any of the keys in the top row of the STARS Keyboard to detect the device 
+    3. Press any joystick-style key on your keyboard to detect the device
   </Accordion>
 </AccordionGroup>
 
 ### Test
 
-1. Press any of the keys in the top row of the STARS Keyboard.
-2. As you press the keyboard keys, watch the button tester application for buttons lighting up or other indications that keypresses are being recognized.
+1. Press several joystick-style keys on your keyboard.
+2. As you press the keys, watch the button tester application for buttons lighting up or other indications that keypresses are being recognized.
 
 ### Result
 
 <Check>
-  If the buttons respond when pressed, continue to [Step 3](#step-3-check-crc).
+  If the buttons respond when pressed, continue to [Step 4](#step-4-check-crc).
 </Check>
 
 <Danger>
-  If the buttons **do not** respond, try unplugging/replugging the device and repeat Step 2. If the issue persists, this may indicate a connection or hardware issue. [Reach out for support](/support).
+  If the buttons **do not** respond, try unplugging/replugging the device and repeat Step 3. If the issue persists, this may indicate a connection or hardware issue. [Reach out for support](/support).
 </Danger>
 
-## Step 3: Check CRC
+## Step 4: Check CRC
 
-If you completed the previous steps successfully, then your STARS Keyboard and computer are functioning correctly. At this point, the issue is most likely related to CRC not properly detecting or handling device inputs.
+If you completed the previous steps successfully, then your keyboard and computer are functioning correctly. At this point, the issue is most likely related to CRC not properly detecting or handling device inputs.
 
-### Next Steps
+### Next steps
 
 If the issue persists, please [contact us](/support) and send:
 
-1. Your CRC logs while running in `debug` mode
-2. Your operating system
-3. A description of the issue
-4. What troubleshooting steps you've tried from this page and the results
+1. The product name
+2. Your CRC logs while running in `debug` mode
+3. Your operating system
+4. A description of the issue
+5. What troubleshooting steps you've tried from this page and the results
 
 We can review the logs and, if needed, coordinate directly with the CRC team to help resolve the issue.
 
-## Debugging: Keyboard Not Detected
+## Debugging: Keyboard not detected
 
-If the standard keyboard keys do not work in Step 2, your computer is not recognizing the device correctly.
+If the standard keyboard keys do not work in Step 2, your computer is not recognizing the device correctly. Use this section for a KSD that does not respond in Step 3 as well.
 
-### Try This First
+### Try this first
 1. Unplug the keyboard
 2. Plug it back in firmly
 3. Try a different USB port on your computer, and avoid USB hubs if possible.
 
-### Then, Check if the Device is Recognized
+### Then, check if the device is recognized
 
 <AccordionGroup>
   <Accordion title='Windows' icon="windows">
@@ -159,7 +169,7 @@ If the standard keyboard keys do not work in Step 2, your computer is not recogn
     3. Open **Control Panel**
     4. Click **Devices and Printers**
 
-    Look for a device called `STARS Keyboard` in the **Devices** or **Unspecified** sections. It may also appear as a **USB Input Device**, **HID-compliant device**, or a similar generic name.
+    Look for a device called `STARS Keyboard`, `ERAM Keyboard`, or `KSD Keyboard` in the **Devices** or **Unspecified** sections. It may also appear as a **USB Input Device**, **HID-compliant device**, or a similar generic name.
   </Accordion>
 
   <Accordion title="macOS" icon="apple">
@@ -171,14 +181,14 @@ If the standard keyboard keys do not work in Step 2, your computer is not recogn
     4. Scroll to the bottom of the **General** page and click **System Report**
     5. In the left sidebar, click **USB**
 
-    Look for a device called `STARS Keyboard`, or one that appears when the keyboard is plugged in.
+    Look for a device called `STARS Keyboard`, `ERAM Keyboard`, or `KSD Keyboard`, or one that appears when the keyboard is plugged in.
   </Accordion>
 </AccordionGroup>
 
 ### Result
 
 <Check>
-  If the device appears in the list, try [Step 2](#step-2-test-standard-keyboard) again.
+  If the device appears in the list, try [Step 2](#step-2-test-standard-keyboard-keys) again.
 </Check>
 
 <Danger>
